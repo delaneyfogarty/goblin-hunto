@@ -51,25 +51,25 @@ function displayGoblins() {
     goblinEl.addEventListener('click', () => {
       //alert('you clicked' + '' + i.name);
 
-        if (Math.random() > .5) {
-          i.hp--;
-          alert(i.name + 'got hit!');
-        } else {
-          alert('you missed!');
-        }
+      if (Math.random() > .5) {
+        i.hp--;
+        alert(i.name + 'got hit!');
+      } else {
+        alert('you missed!');
+      }
 
-        if (Math.random() > .66) {
-          playerHP--;
-          alert(i.name + 'hit you!');         
-        } else {
-          alert('goblin missed!');
-        }
-        if (goblinEl.hp === 0) {
-          goblinsDefeated++;
-          defeatedGoblinsEl.textContent = `You have defeated ${goblinsDefeated} goblins`;
-        }
-        displayGoblins();
-        playerHPEl.textContent = `Your HP: ${playerHP}`;
+      if (Math.random() > .66) {
+        playerHP--;
+        alert(i.name + 'hit you!');         
+      } else {
+        alert('goblin missed!');
+      }
+      if (goblinEl.hp === 0) {
+        goblinsDefeated++;
+        defeatedGoblinsEl.textContent = `You have defeated ${goblinsDefeated} goblins`;
+      }
+      displayGoblins();
+      playerHPEl.textContent = `Your HP: ${playerHP}`;
 
     });
     goblinListEl.append(goblinEl);
