@@ -24,3 +24,36 @@ Additional considerations:
   - What needs to live in a persistence layer?
 - Is there some state we need to initialize?
 - Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+## MY PLAN
+
+STATE ## 
+- number of goblins defeated 
+- name and hp of each goblin - array of goblins: [{name, hp}];
+- player Hit Points 
+
+HTML ELEMENTS ## 
+- div to hold each goblin
+- div to hold the LIST of goblins
+- form/input/button to add new goblins
+- div/p to display number of goblins defeated
+- div to hold player's HP 
+
+FUNCTIONS ##
+- displayGoblins(); 
+  - every time state changes we need the list to update and redisplay
+  -renderGoblins();
+
+EVENTS ##
+- user clicks/attacks a goblin 
+  A. Need to update that the goblin was clicked in the array AND need to update player HP
+  B. What changes with the Goblin? 
+    1.) Randomly determine if player hit or miss and if goblin hit or miss
+    2.) If goblin hits, player HP --;
+    3.) If player hits, goblin HP --;
+    4.) Redisplay updated State
+
+- User submits a new goblin
+  A.) Get name from the form 
+  B.) Goblin object is assigned a name and random HP
+  C.) New goblin rendered to our display
