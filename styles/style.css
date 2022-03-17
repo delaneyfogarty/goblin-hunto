@@ -89,3 +89,27 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+.goblin {
+    background-color: black;
+    color: pink; 
+    display: flex;
+    margin: 10px;
+    box-shadow: var(--var);
+}
+
+.goblin-list {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+img {
+    width: 400px;
+    justify-content: flex-start;
+    align-items: center; 
+}
+
+.main-section {
+    display: flex;
+    
+}
