@@ -8,7 +8,7 @@ const goblinListEl = document.querySelector('.goblin-list');
 const playerHPEl = document.querySelector('.player-hp');
 
 // let state
-let playerHP = 0;
+let playerHP = 3;
 let goblinsDefeated = 0;
 
 const goblinArray = [
@@ -21,7 +21,6 @@ const goblinArray = [
   }
 ];
 
-// display goblins fxn 
 displayGoblins();
 
 
@@ -67,13 +66,14 @@ function displayGoblins() {
         }
         if (goblinEl.hp === 0) {
           goblinsDefeated++;
-          defeatedGoblinsEl.textContent = `You have defeated ${goblinsDefeated} goblins`
+          defeatedGoblinsEl.textContent = `You have defeated ${goblinsDefeated} goblins`;
         }
         displayGoblins();
-        playerHPEl.textContent = playerHP;
+        playerHPEl.textContent = `Your HP: ${playerHP}`;
 
     });
     goblinListEl.append(goblinEl);
+    
   }
 }
 
