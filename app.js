@@ -1,4 +1,6 @@
 // import functions and grab DOM elements
+import { renderGoblin } from './render-utils.js';
+
 
 const formEl = document.querySelector('form');
 const defeatedGoblinsEl = document.querySelector('.defeated-goblins');
@@ -13,9 +15,10 @@ const goblinArray = [
   { name: '', 
     hp: 3 
   }
-]
+];
 
 // display goblins fxn 
+displayGoblins();
 
 
 // set event listeners 
@@ -29,7 +32,7 @@ formEl.addEventListener('submit', (event) => {
   };
 
   goblinArray.unshift(newGoblin);
-  // display goblin fxn 
+  displayGoblins();
   formEl.reset();
 
 });
@@ -39,8 +42,8 @@ function displayGoblins() {
   goblinListEl.textContent = '';
 
   //create an element for each goblin & append to goblinListEl
-  for (let i of goblins) {
-    const goblinEl = renderGoblinEl(i);
+  for (let i of goblinArray) {
+    const goblinEl = renderGoblin(i);
 
     goblinEl.addEventListener('click', () => {
       alert('you clicked' + i.name);
