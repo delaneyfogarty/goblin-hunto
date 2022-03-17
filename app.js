@@ -10,6 +10,7 @@ const playerHPEl = document.querySelector('.player-hp');
 // let state
 let playerHP = 3;
 let goblinsDefeated = 0;
+//console.log(playerHP);
 
 const goblinArray = [
   { name: 'Delaney', 
@@ -75,7 +76,7 @@ function displayGoblins() {
     goblinListEl.append(goblinEl);
     
   }
-  
+
 }
 
 
