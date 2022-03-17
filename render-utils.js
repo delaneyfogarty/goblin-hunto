@@ -8,13 +8,13 @@ export function renderGoblin(i) {
   let goblinEmoji = '';
   nameEl.textContent = i.name;
 
-  if (goblinEl.hp === 3) {
+  if (i.hp === 3) {
     goblinEmoji = '🧝‍♀️';
   } 
-  if (goblinEl.hp === 1 || goblinEl.hp === 2) {
+  if (i.hp === 1 || i.hp === 2) {
     goblinEmoji = '🧛‍♀️';
   } 
-  if (goblinEl.hp < 1) {
+  if (i.hp < 1) {
     goblinEmoji = '🧟‍♀️';
   }
 

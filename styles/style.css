@@ -101,6 +101,7 @@ footer {
 .goblin-list {
     display: flex;
     flex-wrap: wrap; 
+    flex-direction: column;
 }
 
 img {
@@ -111,5 +112,17 @@ img {
 
 .main-section {
     display: flex;
+    flex-direction: row;
     
+}
+
+.first-section {
+    display: flex;
+    flex-direction: column;
+
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
 }

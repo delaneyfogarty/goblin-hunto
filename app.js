@@ -75,6 +75,7 @@ function displayGoblins() {
     goblinListEl.append(goblinEl);
     
   }
+  
 }
 
 
