@@ -8,12 +8,16 @@ const goblinListEl = document.querySelector('.goblin-list');
 const playerHPEl = document.querySelector('.player-hp');
 
 // let state
-let playerHP = 3;
+let playerHP = 0;
 let goblinsDefeated = 0;
 
 const goblinArray = [
-  { name: '', 
+  { name: 'Delaney', 
     hp: 3 
+  },
+  {
+    name: 'Morgan',
+    hp: 2
   }
 ];
 
@@ -27,7 +31,7 @@ formEl.addEventListener('submit', (event) => {
   const data = new FormData(formEl);
   //make a new goblin object with name and random HP
   const newGoblin = {
-    name: data.get('goblin-name'),
+    name: data.get('goblin-name') || 'default',
     hp: Math.ceil(Math.random() * 3),
   };
 
@@ -46,9 +50,8 @@ function displayGoblins() {
     const goblinEl = renderGoblin(i);
 
     goblinEl.addEventListener('click', () => {
-      alert('you clicked' + i.name);
+      //alert('you clicked' + '' + i.name);
 
-        if (i.hp > 0)
         if (Math.random() > .5) {
           i.hp--;
           alert(i.name + 'got hit!');
