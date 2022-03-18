@@ -13,12 +13,10 @@ let goblinsDefeated = 0;
 //console.log(playerHP);
 
 const goblinArray = [
-  { name: 'Delaney',
-    hp: 3
+  { name: 'Delaney', hp: 3,
   },
   {
-    name: 'Morgan',
-    hp: 2
+    name: 'Morgan', hp: 2,
   }
 ];
 
@@ -32,7 +30,8 @@ formEl.addEventListener('submit', (event) => {
   //make a new goblin object with name and random HP
   const newGoblin = {
     name: data.get('goblin-name') || 'default',
-    hp: Math.ceil(Math.random() * 3),
+    // hp: Math.ceil(Math.random() * 3),
+    hp: 3,
   };
 
   goblinArray.unshift(newGoblin);
@@ -68,7 +67,7 @@ function displayGoblins() {
           i.hp--;
           alert(i.name + ' : got hit');
         } else {
-          alert('Goblin Hunter missed!');
+          alert('Goblin Huntress missed!');
         }
 
         if (i.hp === 0) {
