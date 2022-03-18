@@ -52,8 +52,8 @@ function displayGoblins() {
     if (i.hp > 0) {
       goblinEl.addEventListener('click', () => {
 
-        if (playerHP < 0) {
-          alert('Game Over!');
+        if (playerHP === 0) {
+          alert('Game Over! You have no more power.');
           return;
         }
 
@@ -74,11 +74,11 @@ function displayGoblins() {
         if (i.hp === 0) {
           goblinsDefeated++;
         } else if (playerHP < 0) {
-          alert('Game Over!');
+          alert('Game Over! You have no more power.');
         }
 
         playerHPEl.textContent = `Your HP: ${playerHP}`;
-        defeatedGoblinsEl.textContent = goblinsDefeated;
+        defeatedGoblinsEl.textContent = `You have defeated ${goblinsDefeated} goblins`;
 
         displayGoblins();
       });
