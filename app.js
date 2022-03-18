@@ -13,8 +13,8 @@ let goblinsDefeated = 0;
 //console.log(playerHP);
 
 const goblinArray = [
-  { name: 'Delaney', 
-    hp: 3 
+  { name: 'Delaney',
+    hp: 3
   },
   {
     name: 'Morgan',
@@ -25,7 +25,7 @@ const goblinArray = [
 displayGoblins();
 
 
-// set event listeners 
+// set event listeners
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = new FormData(formEl);
@@ -49,37 +49,45 @@ function displayGoblins() {
   for (let i of goblinArray) {
     const goblinEl = renderGoblin(i);
 
+
     goblinEl.addEventListener('click', () => {
-      //alert('you clicked' + '' + i.name);
 
       if (Math.random() > .5) {
         i.hp--;
-        alert(i.name + 'got hit!');
+        alert(`${i.name}` + 'got hit!');
       } else {
-        alert('you missed!');
+        alert('You missed!');
       }
 
       if (Math.random() > .66) {
         playerHP--;
-        alert(i.name + 'hit you!');         
+        alert(`${i.name}` + 'hit you!');
       } else {
-        alert('goblin missed!');
+        alert(`${i.name}` + 'missed!');
       }
       if (goblinEl.hp === 0) {
         goblinsDefeated++;
         defeatedGoblinsEl.textContent = `You have defeated ${goblinsDefeated} goblins`;
       }
+      if (playerHPEl === 0) {
+        alert('game over');
+        return;
+      }
+
+
       displayGoblins();
       playerHPEl.textContent = `Your HP: ${playerHP}`;
 
     });
-    goblinListEl.append(goblinEl);
-    
-  }
 
+    displayGoblins();
+    goblinListEl.append(goblinEl);
+
+  }
 }
 
 
+
   // get user input
-  // use user input to update state 
+  // use user input to update state
   // update DOM to reflect the new state
